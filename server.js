@@ -3,11 +3,13 @@ const app = express();
 
 const port = 3000;
 
+// GREETINGS
+
 // app.get('/', (req, res) => {
 //     console.log("Oh hey! I got a request. Let me respond with ssomething");
 //     req.send("Hello");
 // });
-// //Greetings
+
 // app.get("/greeting/:name", (req, res) => {
 //     console.log(req.params);
 //     res.send("Whats up" + " " + req.params.name);
@@ -18,17 +20,43 @@ const port = 3000;
 // });
 
 
-//tip calculator
+// TIP CALCULATOR 
 
 
-app.get("/tip/:total/:tipPercentage", (req, res) => {
-    console.log(req.params);
-    res.send(req.params.tipPercentage);
+// app.get("/tip/:total/:tipPercentage", (req, res) => {
+//     console.log(req.params);
+//     res.send(req.params.tipPercentage);
+// });
+
+
+// app.listen(3000, () => {
+//     console.log("Express is listening for request from the browser")
+// });
+
+// MAGIC 8 BALL
+const random = Math.floor(Math.random() * answers.length);
+
+const answers = 
+["It is certain", 
+"It is decidedly so",
+ "Without a doubt", 
+ "Yes definitely",
+ "You may rely on it",
+  "As I see it yes", 
+  "Most likely",
+   "Outlook good",
+   "Yes", "Signs point to yes", 
+   "Reply hazy try again", 
+   "Ask again later","Better not tell you now", 
+   "Cannot predict now", "Concentrate and ask again",
+   "Don't count on it", "My reply is no", 
+   "My sources say no","Outlook not so good", "Very doubtful"]
+
+app.get("/magic/:Will%20I%20Be%20A%20Millionaire", (req, res) => {
+    console.log(req.params),
+    ressend(answers.random[req.params]);
 });
-
 
 app.listen(3000, () => {
     console.log("Express is listening for request from the browser")
 });
-
-//
