@@ -12,7 +12,7 @@ app.get("/greeting/:name", (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log("Express is listening for request from the browser");
+    console.log("Express is listening for request from the browser")
 });
 
 
