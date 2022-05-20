@@ -1,4 +1,5 @@
-const express = require("express")
+const express = require("express");
+const { links } = require("express/lib/response");
 const app = express();
 
 const port = 3000;
@@ -6,8 +7,8 @@ const port = 3000;
 // GREETINGS
 
 // app.get('/', (req, res) => {
-//     console.log("Oh hey! I got a request. Let me respond with ssomething");
-//     req.send("Hello");
+//     console.log(req.params);
+//     res.send("Hello");
 // });
 
 // app.get("/greeting/:name", (req, res) => {
@@ -28,6 +29,13 @@ const port = 3000;
 //     res.send(req.params.tipPercentage);
 // });
 
+// app.get("/tip/:total/:tipPercentage", (req, res) => {
+//         let total = parseInt(req.params.total);
+//         let tipPercentage = parseInt(req.params.tipPercentage);
+//         tipTotal = (total * tipPercentage) / 100;
+
+//         res.send("you total tip % is " + tipTotal);
+//     });
 
 // app.listen(3000, () => {
 //     console.log("Express is listening for request from the browser")
@@ -58,9 +66,7 @@ const port = 3000;
 // app.get("/magic/:question", (req, res) => {
 //     res.send(`
 //    <h1>${req.params.question}</h1>
-//      ${answers[Math.floor(Math.random()*answers.length)]}
-        
-//          `)
+//      ${answers[Math.floor(Math.random()*answers.length)]} `)
 // })
 
 // app.listen(3000, () => {
@@ -69,12 +75,21 @@ const port = 3000;
 
 // 99 bottles of beer on the wall
 
-app.get("/", (req, res) => {
-    res.send("99 Bottles of beer on the wall")
-})
+// app.get("/", (req, res) => {
+//     res.send("99 Bottles of pop on the wall" + `,<a herf = "/98`> + "Take one down and pass it around" + `</a>`)
+// });
+// app.get('/-1', (req, res) => {
+//     res.send(`-1 < a href= 'http://localhost/3000' > Start Over </a>`)
+// });
+
+// app.get('/:num_of_bottles', (req, res) => {
+//     res.send(`${req.params.num_of_bottles} Bottles of pop on the wall
+//     <a href= '${req.params.num_of_bottles-2}'> Take one down pass it around</a>`)
+// });
 
 
 
-app.listen(3000, () => {
-    console.log("Express is listening for request from the browser")
-});
+
+// app.listen(3000, () => {
+//     console.log("Express is listening for request from the browser")
+// });
