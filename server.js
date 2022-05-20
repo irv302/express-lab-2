@@ -34,28 +34,46 @@ const port = 3000;
 // });
 
 // MAGIC 8 BALL
-const random = Math.floor(Math.random() * answers.length);
 
-const answers = 
-["It is certain", 
-"It is decidedly so",
- "Without a doubt", 
- "Yes definitely",
- "You may rely on it",
-  "As I see it yes", 
-  "Most likely",
-   "Outlook good",
-   "Yes", "Signs point to yes", 
-   "Reply hazy try again", 
-   "Ask again later","Better not tell you now", 
-   "Cannot predict now", "Concentrate and ask again",
-   "Don't count on it", "My reply is no", 
-   "My sources say no","Outlook not so good", "Very doubtful"]
+// const answers = 
+// ["It is certain", 
+// "It is decidedly so",
+//  "Without a doubt", 
+//  "Yes definitely",
+//  "You may rely on it",
+//   "As I see it yes", 
+//   "Most likely",
+//    "Outlook good",
+//    "Yes", "Signs point to yes", 
+//    "Reply hazy try again", 
+//    "Ask again later","Better not tell you now", 
+//    "Cannot predict now", "Concentrate and ask again",
+//    "Don't count on it", "My reply is no", 
+//    "My sources say no","Outlook not so good", "Very doubtful"]
 
-app.get("/magic/:Will%20I%20Be%20A%20Millionaire", (req, res) => {
-    console.log(req.params),
-    ressend(answers.random[req.params]);
-});
+
+// app.get("/magic/", (req, res) => {
+//     res.send("Magic 8 Ball")
+// })
+// app.get("/magic/:question", (req, res) => {
+//     res.send(`
+//    <h1>${req.params.question}</h1>
+//      ${answers[Math.floor(Math.random()*answers.length)]}
+        
+//          `)
+// })
+
+// app.listen(3000, () => {
+//     console.log("Express is listening for request from the browser")
+// });
+
+// 99 bottles of beer on the wall
+
+app.get("/", (req, res) => {
+    res.send("99 Bottles of beer on the wall")
+})
+
+
 
 app.listen(3000, () => {
     console.log("Express is listening for request from the browser")
